@@ -1,11 +1,17 @@
 name: Workflow Test
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'APP Environment'
+        type: environment
+        required: true
 env:
   workflow_env: "Test 1"
 jobs:
   workflow_test:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     env:
       job_level: "Test 2"
     steps:

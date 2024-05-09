@@ -23,4 +23,5 @@ jobs:
             echo "action variable 1 $ACTION_VARIABLE_1"
             echo "action secret 1 ${{ secrets.ACTION_SECRET_1 }}"
             echo "global secret 1 ${{ secrets.GLOBAL_SECRET1 }}"
-            echo "gloabal var 1 ${{ vars.GLOBAL_VAR1 }}"
+            echo "env specific var 1 ${{ vars.GLOBAL_VAR1 }}"
+            echo "global var 1 $GLOBAL_VAR1"

@@ -14,6 +14,7 @@ jobs:
     environment: ${{ inputs.environment }}
     env:
       job_level: "Test 2"
+      global_sec2: ${{ secrets.GLOBAL_SECRET2 }}
     steps:
       - name: Env variable test
         run: |
@@ -27,4 +28,8 @@ jobs:
             echo "global var 1 $GLOBAL_VAR1"
             echo "global secret 2 is ${{ secrets.GLOBAL_SECRET2 }}" >> /tmp/sec.txt
             cat /tmp/sec.txt
+      - name: validate secret
+        if: ${{ env.GLOBAL_SECRET2 == '' }}
+        run: |
+           echo "secret doesn't exist..."
             

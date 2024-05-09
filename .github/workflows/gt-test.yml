@@ -29,7 +29,7 @@ jobs:
             echo "global secret 2 is ${{ secrets.GLOBAL_SECRET2 }}" >> /tmp/sec.txt
             cat /tmp/sec.txt
       - name: validate secret
-        if: ${{ env.GLOBAL_SECRET2 == '' }}
+        if: ${{ env.global_sec2 == '' }}
         run: |
            echo "secret doesn't exist..."
             

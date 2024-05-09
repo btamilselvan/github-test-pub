@@ -22,3 +22,4 @@ jobs:
             echo "job env name $job_level"
             echo "action variable 1 $ACTION_VARIABLE_1"
             echo "action secret 1 ${{ secrets.ACTION_SECRET_1 }}"
+            echo "global secret 1 ${{ secrets.GLOBAL_SECRET1 }}"

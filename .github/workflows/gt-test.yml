@@ -1,0 +1,18 @@
+name: Workflow Test
+on:
+  workflow_dispatch: 
+env:
+  workflow_env: "Test 1"
+jobs:
+  workflow_test:
+    runs-on: ubuntu-latest
+    env:
+      job_level: "Test 2"
+    steps:
+      - name: Env variable test
+        run: |
+            echo "global env name $workflow_env"
+            echo "global env name accessed in another way ${{ env.workflow_env }}"
+            echo "job env name $job_level"
+            echo "action variable 1 $ACTION_VARIABLE_1"
+            echo "action secret 1 ${{ secrets.ACTION_SECRET_1 }}"

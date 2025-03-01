@@ -25,7 +25,7 @@ jobs:
       run: |
         xcodebuild -version
         sudo xcode-select -switch /Applications/Xcode.app
-        xcodebuild -downloadPlatform iOS -buildVersion 18.2
+        xcodebuild -downloadPlatform iOS --platform iOS --version 18.2
       
     - name: Build
       run: |

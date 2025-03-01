@@ -18,7 +18,9 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode.app
+      run: |
+        sudo xcode-select -switch /Applications/Xcode.app
+        xcodebuild -downloadPlatform iOS --platform iOS --version 18.2
       
     - name: Build
       run: |

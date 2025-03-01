@@ -12,7 +12,6 @@ on:
 jobs:
   build:
     name: Build and Test
-    #set runs-on to macos-15.2
     runs-on: macos-15
 
     steps:
@@ -25,3 +24,4 @@ jobs:
       run: |
         echo "Hello from iOS GitHub Actions!"
         xcodebuild -version
+        xcodebuild -showsdks

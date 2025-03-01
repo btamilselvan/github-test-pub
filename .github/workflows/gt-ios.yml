@@ -25,7 +25,8 @@ jobs:
       run: |
         xcodebuild -version
         xcodebuild -showsdks
-        sudo xcode-select -switch /Applications/Xcode.app
+        # sudo xcode-select -switch /Applications/Xcode.app
+        # sudo xcodebuild -downloadPlatform iOS
       
     - name: Build
       run: |

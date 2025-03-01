@@ -1,0 +1,27 @@
+
+name: iOS Hello World
+
+on:
+    workflow_dispatch:
+      inputs:
+        environment:
+          description: 'APP Environment'
+          type: environment
+          required: true
+
+jobs:
+  build:
+    name: Build and Test
+    #set runs-on to macos-15.2
+    runs-on: macos-15.2
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode.app
+      
+    - name: Build
+      run: |
+        echo "Hello from iOS GitHub Actions!"
+        xcodebuild -version

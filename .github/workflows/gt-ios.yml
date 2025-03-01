@@ -27,6 +27,11 @@ jobs:
         xcodebuild -showsdks
         # sudo xcode-select -switch /Applications/Xcode.app
         # sudo xcodebuild -downloadPlatform iOS
+        xcode-select --install
+        sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+        rm -rf ~/Library/Developer/Xcode/DerivedData
+        sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+        sudo xcodebuild -license accept
       
     - name: Build
       run: |
